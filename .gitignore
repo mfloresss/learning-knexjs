@@ -1,0 +1,14 @@
+# dependencies
+/node_modules
+
+# misc
+.DS_Store
+
+# local env files
+.env.local
+.env.*.local
+.envrc
+.env
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
