@@ -4,6 +4,7 @@ class UserController {
   async createUser(req, res) {
     try {
       const user = await userService.createUser(req.body);
+      console.log({ user });
       res.status(201).json(user);
     } catch (err) {
       console.log(err);
@@ -16,6 +17,7 @@ class UserController {
       if (user.length === 0) {
         return res.status(404).json({ detail: "User not found" });
       }
+      console.log({ user });
       res.status(201).json(user);
     } catch (err) {
       console.log(err);
@@ -28,6 +30,7 @@ class UserController {
       if (users.length === 0) {
         return res.status(404).json({ detail: "Users not found" });
       }
+      console.log({ users });
       res.status(201).json(users);
     } catch (err) {
       console.log(err);

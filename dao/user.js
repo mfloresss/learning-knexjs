@@ -10,14 +10,16 @@ class UserDAO {
     });
     return { name, age, email, phone };
   }
+
   async getUser(name) {
     const user = await db("user")
       .where({
         name,
       })
       .select("*");
-    return user;
+      return user;
   }
+
   async getUsers() {
     const users = await db("user").select("*");
     return users;
