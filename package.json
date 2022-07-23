@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
-    "migrate": "npx knex migrate:latest --knexfile db/knexfile.js"
+    "db:setup": "npx knex migrate:rollback --all && npx knex migrate:latest && npx knex seed:run",
+    "db:seed": "npx knex seed:run",
+    "db:migrate": "npx knex migrate:latest --knexfile knexfile.js"
   },
   "keywords": [],
   "author": "",
